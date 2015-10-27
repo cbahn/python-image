@@ -13,18 +13,13 @@ def gradient( i ):
 
 # main
 # img = Image.new( 'RGB', screen_size, (238,232,213)) # create a new black image
-img = Image.open("truck.jpg")
-img.rotate(45).show()
+img = Image.open("truck.bmp")
 pixels = img.load() # create the pixel map
 
-for x in range(screen_size[0]):
-	#number_bands = gradient(x)
-	band_width = screen_size[1] / number_bands
-	
-	for y in range(screen_size[1]):
-		if (y%band_width >= band_width*(y/band_width) / number_bands):
-			pixels[x,y] = (42,161,152 )
-
+for x in range( img.size[0] ):
+	for y in range( img.size[1] ):
+		if( random.randint(0,3) == 0):
+			pixels[x,y] = (0,0,0)
 
 img.save('stripes.bmp')
 

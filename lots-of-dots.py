@@ -4,7 +4,6 @@ import random
 import operator
 
 
-
 #basic def of screen size
 screen_size = (1280,800)
 
